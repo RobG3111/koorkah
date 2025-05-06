@@ -62,7 +62,7 @@ public class FileConvertor
         
         replace(" extends BaseT", "(unittest.TestCase):");
         replace(" String", "");
-        replace(" refi.", " self.refi.");
+        replace(" koorkah.", " self.koorkah.");
         replace(" assertRegex", " self.utils.assertRegex");
         replace(" void ", " def ");
         replace("()", "(self):\n");
@@ -92,7 +92,7 @@ public class FileConvertor
         insertAfterMatch("(unittest.TestCase):", 
                 "\r\n"
                 + "    def setUp(self):\r\n"
-                + "        self.refi = Koorkah()\r\n"
+                + "        self.koorkah = Koorkah()\r\n"
                 + "        self.utils = Utils()\r\n");
 
         try(PrintWriter writer = new PrintWriter(new FileWriter(target)))
@@ -124,7 +124,6 @@ public class FileConvertor
         Pattern pattern = Pattern.compile(regex);
         for (int i = 0; i < lines.size(); i++)
         {
-            String line = lines.get(i);
             Matcher matcher = pattern.matcher(lines.get(i));
             if (matcher.matches())
             {

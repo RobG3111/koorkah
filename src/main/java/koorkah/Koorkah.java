@@ -25,15 +25,15 @@ public class Koorkah
         
     }
     
-    public String toRegEx(String refiExpression)
+    public String toRegEx(String koorkahExpression)
     {
         walker = new KoorkahWalker();
-        return walker.toRegEx(refiExpression);
+        return walker.toRegEx(koorkahExpression);
     }
     
-    public Pattern toPattern(String refiExpression)
+    public Pattern toPattern(String koorkahExpression)
     {
-        return Pattern.compile(toRegEx(refiExpression), walker.getFlags());
+        return Pattern.compile(toRegEx(koorkahExpression), walker.getFlags());
     }
     
     public int getFlags()

@@ -1,4 +1,4 @@
-// Generated from C:/Users/robg3/workspace/refi/src/refi/KoorkahParser.g4 by ANTLR 4.13.1
+// Generated from C:/Users/robg3/workspace/koorkah/src/koorkah/KoorkahParser.g4 by ANTLR 4.13.1
 
 package koorkah;
 
@@ -12,7 +12,6 @@ import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
  * @param <T> The return type of the visit operation. Use {@link Void} for
  * operations with no return type.
  */
-@SuppressWarnings("CheckReturnValue")
 public class KoorkahParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements KoorkahParserVisitor<T> {
 	/**
 	 * {@inheritDoc}

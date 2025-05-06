@@ -26,23 +26,23 @@ public class KoorkahWalker implements KoorkahParserListener
         
     }
     
-    String toRegEx(String refiExpression)
+    String toRegEx(String koorkahExpression)
     {
         builder.setLength(0);
-        KoorkahLexer refiLexer = new KoorkahLexer(CharStreams.fromString(refiExpression));
-        refiLexer.removeErrorListeners();
-        refiLexer.addErrorListener(throwingErrorListener);
-        KoorkahParser refiParser = new KoorkahParser(new CommonTokenStream(refiLexer));
-        refiParser.removeErrorListeners();
-        refiParser.addErrorListener(throwingErrorListener);
+        KoorkahLexer koorkahLexer = new KoorkahLexer(CharStreams.fromString(koorkahExpression));
+        koorkahLexer.removeErrorListeners();
+        koorkahLexer.addErrorListener(throwingErrorListener);
+        KoorkahParser koorkahParser = new KoorkahParser(new CommonTokenStream(koorkahLexer));
+        koorkahParser.removeErrorListeners();
+        koorkahParser.addErrorListener(throwingErrorListener);
         ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(this, refiParser.expression());
+        walker.walk(this, koorkahParser.expression());
         return builder.toString();
     }
     
-    public Pattern toPattern(String refiExpression)
+    public Pattern toPattern(String koorkahExpression)
     {
-        return Pattern.compile(toRegEx(refiExpression), flags);
+        return Pattern.compile(toRegEx(koorkahExpression), flags);
     }
     
     public int getFlags()
